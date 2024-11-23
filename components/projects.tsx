@@ -10,25 +10,48 @@ import { motion } from "framer-motion";
 export function Projects() {
   const projects = [
     {
-      title: "Personal Blog",
-      description: "A blog built with Next.js and MDX for sharing my learning journey.",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800&h=400",
-      tech: ["Next.js", "MDX", "Tailwind CSS"],
+      title: "Netflix",
+      description:
+        "A blog built with Next.js and MDX for sharing my learning journey.",
+      image:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800&h=400",
+      tech: ["React", "Zustand", "SCSS", "Netlify", 'API'],
       github: "#",
       demo: "#",
     },
     {
-      title: "Weather App",
+      title: "Fashion store",
       description: "A weather application using OpenWeather API and React.",
-      image: "https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?auto=format&fit=crop&q=80&w=800&h=400",
+      image:
+        "https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?auto=format&fit=crop&q=80&w=800&h=400",
       tech: ["React", "API", "CSS"],
       github: "#",
       demo: "#",
     },
     {
-      title: "Task Manager",
+      title: "Web Studio",
       description: "A simple task management application with local storage.",
-      image: "https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&q=80&w=800&h=400",
+      image:
+      
+        "https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&q=80&w=800&h=400",
+      tech: ["JavaScript", "HTML", "CSS"],
+      github: "#",
+      demo: "#",
+    },
+    {
+      title: "REEDEE",
+      description: "A simple task management application with local storage.",
+      image:
+        "https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&q=80&w=800&h=400",
+      tech: ["JavaScript", "HTML", "CSS"],
+      github: "#",
+      demo: "#",
+    },
+    {
+      title: "REEDEE",
+      description: "A simple task management application with local storage.",
+      image:
+        "https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&q=80&w=800&h=400",
       tech: ["JavaScript", "HTML", "CSS"],
       github: "#",
       demo: "#",
@@ -80,9 +103,9 @@ export function Projects() {
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="object-cover transition-transform duration-500  group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-85 transition-opacity duration-300" />
               </div>
               <CardHeader>
                 <CardTitle className="tracking-tighter">{project.title}</CardTitle>
