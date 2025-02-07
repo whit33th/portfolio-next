@@ -38,10 +38,7 @@ export function ThreeDCard({
           />
         </CardItem>
         <div className="flex justify-between items-start mt-4 gap-4">
-          <CardItem
-            translateZ={15}
-            className=" rounded-xl text-xs font-normal "
-          >
+          <CardItem translateZ={15} className=" rounded-xl text-xs font-normal ">
             <div className="flex flex-wrap gap-1 ">
               {stack.map((tech, index) => (
                 <span

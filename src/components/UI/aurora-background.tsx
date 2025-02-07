@@ -17,12 +17,12 @@ export const AuroraBackground = ({
     <main>
       <div
         className={cn(
-            "relative flex flex-col min-h-screen h-full bg-transparent transition-bg ",
+          "relative flex flex-col min-h-screen h-full bg-transparent transition-bg ",
           className
         )}
         {...props}
       >
-        <div className="absolute inset-0 overflow-hidden filter grayscale brightness-50 contrast-125">
+        <div className="absolute inset-0 overflow-hidden filter grayscale brightness-[0.3] contrast-125">
           <div
             //   I'm sorry but this is what peak developer performance looks like // trigger warning
             className={cn(

@@ -13,23 +13,25 @@ const robotoSans = Roboto({
 export const metadata: Metadata = {
   title: "dkaminskyi",
   description: "Daniil Kaminskyi's portfolio",
+  metadataBase: new URL("https://dkaminskyi.xyz"),
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
     title: "dkaminskyi",
-    description: "Daniil Kaminskyi's portfolio",
-    url: "https://dkaminskyi.com",
+    description: "Daniil Kaminskyi's portfolio. Frontend Developer",
+    url: "https://dkaminskyi.xyz",
     siteName: "dkaminskyi",
     images: [
       {
-        url: "/img/grey.png",
+        url: "/img/me.webp",
       },
     ],
     locale: "en_US",
     type: "website",
     emails: ["deniil019@gmail.com"],
     countryName: "Poland",
+    phoneNumbers: ["+48572296004"],
   },
 };
 
@@ -43,7 +45,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${robotoSans.className} antialiased`}>
           <SidebarDemo>
-            <main className="w-full h-screen  overflow-y-auto">
+            <main className="w-full h-screen overflow-y-auto">
               <AuroraBackground>{children}</AuroraBackground>
             </main>
           </SidebarDemo>

@@ -1,4 +1,5 @@
 "use client";
+import DecryptedText from "@/components/containers/DecryptedText/DecryptedText";
 
 export default function DownloadCV() {
   const handleDownload = () => {
@@ -14,19 +15,22 @@ export default function DownloadCV() {
             <div className="text-center space-y-8">
               <div className="space-y-4">
                 <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-200 to-neutral-500">
-                Resume
+                  <DecryptedText animateOn={"view"} text="Resume" />
                 </h1>
-                
               </div>
 
               <div className="w-full" onClick={handleDownload}>
                 <button className="bg-[#0c0c0c] hover:bg-[#151515] border border-[#191919] rounded-xl px-8 py-4 text-neutral-200 font-medium transition-colors">
-                  Download
+                  <DecryptedText speed={60} animateOn={"view"} text="Download" />
                 </button>
               </div>
 
               <p className="text-sm text-neutral-400">
-                Available in PDF format • Last updated 2025
+                <DecryptedText
+                  speed={40}
+                  animateOn={"view"}
+                  text="Available in PDF format • Last updated 2025"
+                />
               </p>
             </div>
           </div>

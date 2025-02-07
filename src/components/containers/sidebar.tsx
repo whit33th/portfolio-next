@@ -2,16 +2,17 @@
 import { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "@/components/UI/sidebar";
 import {
- 
   IconCode,
   IconStack2,
   IconUser,
   IconDownload,
+
 } from "@tabler/icons-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import Dock from "@/components/containers/Dock/Dock";
 
 export function SidebarDemo({ children }: { children: React.ReactNode }) {
   const links = [
@@ -27,7 +28,7 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
     },
     {
       label: "About",
-      href: "/about",
+      href: "/",
       icon: <IconUser className="h-5 w-5 flex-shrink-0" />,
     },
     // {
@@ -37,15 +38,21 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
     // },
   ];
   const [open, setOpen] = useState(false);
+
+  const handleLinkClick = () => {
+    setOpen(false);
+  };
+
   const handleDownload = () => {
     const cvUrl = "/resume.pdf";
     window.open(cvUrl, "_blank");
   };
+
   return (
     <div
       className={cn(
         "rounded-md flex flex-col md:flex-row w-full flex-1 overflow-hidden",
-        "h-screen" // for your use case, use `h-screen` instead of `h-[60vh]`
+        "h-screen"
       )}
     >
       <Sidebar open={open} setOpen={setOpen} animate={false}>
@@ -56,7 +63,7 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
                 <SidebarLink
                   link={{
                     label: "Daniil Kaminskyi",
-                    href: "/about",
+                    href: "/",
                     icon: (
                       <Image
                         src="/img/me.webp"
@@ -67,30 +74,37 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
                       />
                     ),
                   }}
+                  onClick={handleLinkClick}
                 />
               </div>
             </>
             <div className="mt-8 flex flex-col gap-2">
               {links.map((link, idx) => (
-                <SidebarLink key={idx} link={link} />
+                <SidebarLink key={idx} link={link} onClick={handleLinkClick} />
               ))}
             </div>
 
-            <div className="mt-auto mb-6 px-2">
-              <div className="bg-[#0c0c0c] border border-[#191919] rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-neutral-200 mb-2">Resume</h3>
-                <p className="text-sm text-neutral-400 mb-4">
-                  Get my latest resume in PDF format
-                </p>
-                <p className="text-xs mb-2 text-neutral-500"> Last updated 2025</p>
+            <div className="mt-auto ">
+              <div className="px-2 mb-4">
+                <div className="bg-[#0c0c0c] border border-[#191919] rounded-xl p-6">
+                  <h3 className="text-lg font-semibold text-neutral-200 mb-2">Resume</h3>
+                  <p className="text-sm text-neutral-400 mb-4">
+                    Get my latest resume in PDF format
+                  </p>
+                  <p className="text-xs mb-2 text-neutral-500"> Last updated 2025</p>
 
-                <button
-                  onClick={handleDownload}
-                  className=" w-full flex justify-center items-center gap-1 bg-[#0c0c0c] hover:bg-[#151515] border border-[#191919] rounded-xl px-8 py-4 text-neutral-200 font-medium transition-colors"
-                >
-                  <IconDownload className="h-4 w-4" />
-                  <span className="font-medium">Download</span>
-                </button>
+                  <button
+                    onClick={handleDownload}
+                    className=" w-full flex justify-center items-center gap-1 bg-[#0c0c0c] hover:bg-[#151515] border border-[#191919] rounded-xl px-8 py-4 text-neutral-200 font-medium transition-colors"
+                  >
+                    <IconDownload className="h-4 w-4" />
+                    <span className="font-medium">Download</span>
+                  </button>
+                </div>
+              </div>
+
+              <div className="relative h-[60px] border-t border-[#191919]">
+                <Dock position="bottom" />
               </div>
             </div>
           </div>
