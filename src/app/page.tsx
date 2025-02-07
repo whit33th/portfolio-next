@@ -3,7 +3,7 @@ import Image from "next/image";
 import { stack } from "@/data/stack";
 import { CardBody, CardContainer, CardItem } from "@/components/UI/3d-card";
 import { experience } from "@/data/experience";
-import DecryptedText from "@/components/containers/DecryptedText/DecryptedText";
+import DecryptedText from "@/components/containers/DecryptedText";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
               <CardItem translateZ={40}>
                 <Image
                   src="/img/me.webp"
-                  alt="Me"
+                  alt="My photo"
                   width={1000}
                   height={1000}
                   loading="eager"
@@ -29,7 +29,7 @@ export default function Home() {
           <div className="flex-1 space-y-8">
             <div className="space-y-4">
               <h2 className="text-6xl pb-1 font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-200 to-neutral-500">
-                <DecryptedText speed={100} animateOn={"view"} text="Daniil Kaminskyi" />
+                <DecryptedText speed={70} animateOn={"view"} text="Daniil Kaminskyi" />
               </h2>
               <p className="text-lg text-neutral-400">
                 <DecryptedText speed={80} animateOn={"view"} text="Frontend Developer" />

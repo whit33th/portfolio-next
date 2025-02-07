@@ -1,18 +1,12 @@
 "use client";
 import { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "@/components/UI/sidebar";
-import {
-  IconCode,
-  IconStack2,
-  IconUser,
-  IconDownload,
-
-} from "@tabler/icons-react";
+import { IconCode, IconStack2, IconUser, IconDownload } from "@tabler/icons-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import Dock from "@/components/containers/Dock/Dock";
+import Dock from "@/components/containers/Dock";
 
 export function SidebarDemo({ children }: { children: React.ReactNode }) {
   const links = [
@@ -31,11 +25,6 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
       href: "/",
       icon: <IconUser className="h-5 w-5 flex-shrink-0" />,
     },
-    // {
-    //   label: "Resume",
-    //   href: "/resume",
-    //   icon: <IconArrowLeft className="h-5 w-5 flex-shrink-0" />,
-    // },
   ];
   const [open, setOpen] = useState(false);
 
@@ -59,23 +48,20 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
         <SidebarBody className="justify-between gap-10">
           <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
             <>
-              <div>
-                <SidebarLink
-                  link={{
-                    label: "Daniil Kaminskyi",
-                    href: "/",
-                    icon: (
-                      <Image
-                        src="/img/me.webp"
-                        className="h-7 w-7 flex-shrink-0 rounded-full"
-                        width={50}
-                        height={50}
-                        alt="Avatar"
-                      />
-                    ),
-                  }}
-                  onClick={handleLinkClick}
+              <div className="flex flex-col md:flex-row items-center sm:gap-0 gap-2 ">
+                <Image
+                  src="/img/me.webp"
+                  className="h-12 w-12 flex-shrink-0 rounded-xl aspect-square object-cover"
+                  width={64}
+                  height={64}
+                  alt="My photo"
                 />
+                <div className="ml-4 flex flex-col">
+                  <h2 className="text-lg font-semibold text-neutral-200 text-center sm:text-start">
+                    Daniil Kaminskyi
+                  </h2>
+                  <p className="text-sm text-neutral-400">deniil019@gmail.com</p>
+                </div>
               </div>
             </>
             <div className="mt-8 flex flex-col gap-2">
@@ -141,5 +127,3 @@ export const LogoIcon = () => {
     </Link>
   );
 };
-
-// Dummy dashboard component with content

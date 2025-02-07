@@ -1,4 +1,12 @@
-export const experience = [
+interface IExperience {
+  id: number;
+  position: string;
+  company: string;
+  period: string;
+  responsibilities: string[];
+}
+
+export const experience: IExperience[] = [
   {
     id: 1,
     position: "Frontend Developer (React)",

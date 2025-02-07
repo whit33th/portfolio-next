@@ -35,6 +35,7 @@ export function ThreeDCard({
             width="1000"
             className="w-full object-cover aspect-video rounded-xl group-hover/card:shadow-xl"
             alt="thumbnail"
+            loading='eager'
           />
         </CardItem>
         <div className="flex justify-between items-start mt-4 gap-4">
@@ -50,13 +51,7 @@ export function ThreeDCard({
               ))}
             </div>
           </CardItem>
-          {/* <CardItem
-            translateZ={25}
-            as="button"
-            className="px-4 py-2 rounded-xl bg-black dark:bg-white  text-xs font-bold"
-          >
-            GitHub
-          </CardItem> */}
+          
 
           {git && (
             <CardItem translateZ={25}>
