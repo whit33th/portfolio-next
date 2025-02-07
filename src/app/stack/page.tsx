@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { stack } from "@/data/stack";
+import DecryptedText from "@/components/containers/DecryptedText/DecryptedText";
 
 function page() {
   const allTechnologies = stack.flatMap((c) => c.content);
@@ -8,9 +9,15 @@ function page() {
   return (
     <div className="flex flex-col min-h-screen p-4 z-10">
       <div className="pt-8 pb-6 flex flex-col items-center space-y-2">
-        <h1 className="text-5xl font-bold tracking-tight">Stack</h1>
+        <h1 className="text-5xl font-bold tracking-tight">
+          <DecryptedText animateOn={"view"} text="Stack" />
+        </h1>
         <p className="text-sm text-neutral-400">
-          Technologies, resources and tools I use in my work
+          <DecryptedText
+            speed={60}
+            animateOn={"view"}
+            text="Technologies, resources and tools I use in my work"
+          />
         </p>
       </div>
 
@@ -27,9 +34,15 @@ function page() {
                   height={80}
                 />
                 <div className="flex flex-col items-center">
-                  <span className="text-sm font-medium text-center">{tech.name}</span>
+                  <span className="text-sm font-medium text-center">
+                    <DecryptedText speed={50} animateOn={"view"} text={tech.name} />
+                  </span>
                   <span className="text-xs text-zinc-400 text-center">
-                    {tech.description}
+                    <DecryptedText
+                      speed={40}
+                      animateOn={"view"}
+                      text={tech.description}
+                    />
                   </span>
                 </div>
               </div>
