@@ -3,7 +3,7 @@ import React, { useEffect, useId, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
-import { SparklesCore } from "@/components/UI/sparkles";
+import { SparklesCore } from "./sparkles";
 
 export const Cover = ({
   children,
@@ -130,14 +130,10 @@ export const Cover = ({
             duration: 0.2,
           },
         }}
-        className={cn(
-          " relative z-20  transition duration-200",
-          className
-        )}
+        className={cn(" relative z-20  transition duration-200", className)}
       >
         {children}
       </motion.span>
-      
     </div>
   );
 };
@@ -209,7 +205,6 @@ export const Beam = ({
 
 export const CircleIcon = ({
   className,
-  
 }: {
   className?: string;
   delay?: number;

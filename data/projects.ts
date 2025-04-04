@@ -1,17 +1,17 @@
-interface IProject {
-  id: number;
+export interface IProject {
   title: string;
   description: string;
   image: string;
   git?: string;
   stack: string[];
+  media?: "video" | "image";
 }
 
 export const projects: IProject[] = [
   {
-    id: 1,
     title: "Tagly",
-    description: "Price comparison tool for online shopping. (only in Poland region)",
+    description:
+      "Price comparison tool for online shopping. (only in Poland region)",
     image: "/img/projects/tagly/1.webp",
     git: "https://github.com/whit33th/tagly",
     stack: [
@@ -27,7 +27,6 @@ export const projects: IProject[] = [
     ],
   },
   {
-    id: 2,
     title: "MojLekarz",
     description:
       "Portal for booking appointments with ready business logic for firm, admin, doctor and patient.",
@@ -36,15 +35,32 @@ export const projects: IProject[] = [
     stack: ["React", "Zustand", "Tanstack Query", "ESLint", "Netlify"],
   },
   {
-    id: 3,
+    title: "TrueSight",
+    description:
+      "League of Legends analytics platform with champion win rates, profile stats, match history data and game insights.",
+    image: "/video/TrueSight.mkv",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "RIOT API",
+      "Next API",
+      "Clerk",
+      "Tanstack Query",
+      "Prisma",
+      "ESLint",
+    ],
+    media: "video",
+  },
+  {
     title: "Design studio",
-    description: "Website for a design studio with a portfolio and contact form.",
+    description:
+      "Website for a design studio with a portfolio and contact form.",
     image: "/img/projects/WebStudio/st1.png",
     git: "https://github.com/whit33th/design-studio",
     stack: ["React", "CSS/SCSS", "Zustand", "ESLint"],
   },
   {
-    id: 4,
     title: "PowderPlanet",
     description: "Just a fun project about Arcane World by Netflix.",
     image: "/img/projects/PowderPlanet/1.webp",
@@ -61,7 +77,6 @@ export const projects: IProject[] = [
     ],
   },
   {
-    id: 5,
     title: "RED",
     description: "Fashion store site.",
     image: "/img/projects/Red/1.webp",
@@ -69,7 +84,6 @@ export const projects: IProject[] = [
     stack: ["PHP", "CSS/SCSS", "API", "Azure"],
   },
   {
-    id: 6,
     title: "Netflix",
     description: "Netflix clone.",
     image: "/img/projects/Netflix/1.webp",
@@ -77,14 +91,12 @@ export const projects: IProject[] = [
     stack: ["React", "Zustand", "SCSS", "Youtube API", "Netlify"],
   },
   {
-    id: 7,
     title: "REEDEE",
     description: "Friendly neighborhood library.",
     image: "/img/projects/Reedee/1.webp",
     stack: ["React", "CSS/SCSS"],
   },
   {
-    id: 8,
     title: "Medieval Dynasty",
     description: "Medieval game website.",
     image: "/img/projects/MD/1.webp",

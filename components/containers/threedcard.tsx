@@ -5,20 +5,16 @@ import React from "react";
 import { CardBody, CardContainer, CardItem } from "../UI/3d-card";
 import Link from "next/link";
 import { HoverBorderGradient } from "../UI/hover-border-gradient";
+import { IProject } from "@/data/projects";
 
 export function ThreeDCard({
-  img,
+  image,
   git,
   stack,
   title,
   description,
-}: {
-  img: string;
-  git?: string;
-  stack: string[];
-  title: string;
-  description: string;
-}) {
+  media = "image",
+}: IProject) {
   return (
     <CardContainer className="inter-var flex flex-1 h-full">
       <CardBody className="bg-card relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-auto  h-auto rounded-xl p-6 border  ">
@@ -29,17 +25,32 @@ export function ThreeDCard({
           {description}
         </CardItem>
         <CardItem translateZ="60" className="w-full mt-4">
-          <Image
-            src={img || "/img/grey.png"}
-            height="1000"
-            width="1000"
-            className="w-full object-cover aspect-video rounded-xl group-hover/card:shadow-xl"
-            alt="thumbnail"
-            loading='eager'
-          />
+          {media === "image" ? (
+            <Image
+              src={image || "/img/grey.png"}
+              height="1000"
+              width="1000"
+              className="w-full object-cover aspect-video rounded-xl group-hover/card:shadow-xl"
+              alt="thumbnail"
+              loading="eager"
+            />
+          ) : (
+            <video
+              src={image}
+              className="w-full object-cover aspect-video rounded-xl group-hover/card:shadow-xl"
+              autoPlay
+              poster="/img/grey.png"
+              muted
+              loop
+              playsInline
+            />
+          )}
         </CardItem>
         <div className="flex justify-between items-start mt-4 gap-4">
-          <CardItem translateZ={15} className=" rounded-xl text-xs font-normal ">
+          <CardItem
+            translateZ={15}
+            className=" rounded-xl text-xs font-normal "
+          >
             <div className="flex flex-wrap gap-1 ">
               {stack.map((tech, index) => (
                 <span
@@ -51,7 +62,6 @@ export function ThreeDCard({
               ))}
             </div>
           </CardItem>
-          
 
           {git && (
             <CardItem translateZ={25}>

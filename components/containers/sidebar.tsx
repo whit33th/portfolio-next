@@ -1,12 +1,17 @@
 "use client";
 import { useState } from "react";
-import { Sidebar, SidebarBody, SidebarLink } from "@/components/UI/sidebar";
-import { IconCode, IconStack2, IconUser, IconDownload } from "@tabler/icons-react";
+import { Sidebar, SidebarBody, SidebarLink } from "../UI/sidebar";
+import {
+  IconCode,
+  IconStack2,
+  IconUser,
+  IconDownload,
+} from "@tabler/icons-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import Dock from "@/components/containers/Dock";
+import Dock from "./Dock";
 
 export function SidebarDemo({ children }: { children: React.ReactNode }) {
   const links = [
@@ -60,7 +65,9 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
                   <h2 className="text-lg font-semibold text-neutral-200 text-center sm:text-start">
                     Daniil Kaminskyi
                   </h2>
-                  <p className="text-sm text-neutral-400">deniil019@gmail.com</p>
+                  <p className="text-sm text-neutral-400">
+                    deniil019@gmail.com
+                  </p>
                 </div>
               </div>
             </>
@@ -73,11 +80,16 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
             <div className="mt-auto ">
               <div className="px-2 mb-4">
                 <div className="bg-[#0c0c0c] border border-[#191919] rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-neutral-200 mb-2">Resume</h3>
+                  <h3 className="text-lg font-semibold text-neutral-200 mb-2">
+                    Resume
+                  </h3>
                   <p className="text-sm text-neutral-400 mb-4">
                     Get my latest resume in PDF format
                   </p>
-                  <p className="text-xs mb-2 text-neutral-500"> Last updated 2025</p>
+                  <p className="text-xs mb-2 text-neutral-500">
+                    {" "}
+                    Last updated 2025
+                  </p>
 
                   <button
                     onClick={handleDownload}

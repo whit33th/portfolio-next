@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { stack } from "@/data/stack";
-import { CardBody, CardContainer, CardItem } from "@/components/UI/3d-card";
+import { CardBody, CardContainer, CardItem } from "../components/UI/3d-card";
 import { experience } from "@/data/experience";
-import DecryptedText from "@/components/containers/DecryptedText";
+import DecryptedText from "../components/containers/DecryptedText";
 
 export default function Home() {
   return (

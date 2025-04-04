@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import { SidebarDemo } from "@/components/containers/sidebar";
-import { SidebarProvider } from "@/components/UI/sidebar";
-import { AuroraBackground } from "@/components/UI/aurora-background";
+import { SidebarDemo } from "../components/containers/sidebar";
+import { SidebarProvider } from "../components/UI/sidebar";
+import { AuroraBackground } from "../components/UI/aurora-background";
 
 const robotoSans = Roboto({
   subsets: ["cyrillic", "greek", "latin"],
