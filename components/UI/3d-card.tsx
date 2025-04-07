@@ -2,7 +2,13 @@
 
 import { cn } from "@/lib/utils";
 
-import React, { createContext, useState, useContext, useRef, useEffect } from "react";
+import React, {
+  createContext,
+  useState,
+  useContext,
+  useRef,
+  useEffect,
+} from "react";
 
 const MouseEnterContext = createContext<
   [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
@@ -12,35 +18,79 @@ export const CardContainer = ({
   children,
   className,
   containerClassName,
+  rotateX = 25, // Default value for X rotation sensitivity
+  rotateY = 25, // Default value for Y rotation sensitivity
+  threshold = 5, // Minimum movement threshold
+  damping = 5, // Damping factor to smooth rotation
+  transition = { duration: 0.3, timing: "cubic-bezier(0.4, 0, 0.2, 1)" },
 }: {
   children?: React.ReactNode;
   className?: string;
   containerClassName?: string;
+  rotateX?: number;
+  rotateY?: number;
+  threshold?: number;
+  damping?: number;
+  transition?: { duration: number; timing: string };
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMouseEntered, setIsMouseEntered] = useState(false);
+  const [rotationValues, setRotationValues] = useState({ x: 0, y: 0 });
+  const lastMousePosition = useRef({ x: 0, y: 0 });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
-    const { left, top, width, height } = containerRef.current.getBoundingClientRect();
-    const x = (e.clientX - left - width / 2) / 25;
-    const y = (e.clientY - top - height / 2) / 25;
-    containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    const { left, top, width, height } =
+      containerRef.current.getBoundingClientRect();
+
+    // Calculate the center-relative position
+    const x = e.clientX - left - width / 2;
+    const y = e.clientY - top - height / 2;
+
+    // Calculate the distance from center
+    const distance = Math.sqrt(x * x + y * y);
+
+    // Apply threshold - ignore tiny movements
+    if (distance < threshold) {
+      return;
+    }
+
+    // Apply damping to smooth the effect
+    const dampX = x / (rotateX * damping);
+    const dampY = y / (rotateY * damping);
+
+    // Set the new rotation values with damping
+    setRotationValues({
+      x: -dampY,
+      y: dampX,
+    });
+
+    // Apply the transformation
+    containerRef.current.style.transform = `rotateY(${dampX}deg) rotateX(${-dampY}deg)`;
+
+    // Store last position
+    lastMousePosition.current = { x: e.clientX, y: e.clientY };
   };
 
   const handleMouseEnter = () => {
     setIsMouseEntered(true);
     if (!containerRef.current) return;
-    // Добавляем transition при входе мыши
-    containerRef.current.style.transition = "none";
+    // Add a slight transition for initial tilt
+    containerRef.current.style.transition = `transform ${
+      transition.duration / 2
+    }s ${transition.timing}`;
+    // Clear transition after the initial movement
+    setTimeout(() => {
+      if (containerRef.current) containerRef.current.style.transition = "none";
+    }, transition.duration * 250);
   };
 
   const handleMouseLeave = () => {
     if (!containerRef.current) return;
     setIsMouseEntered(false);
-    // Добавляем transition при выходе мыши
-    containerRef.current.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+    containerRef.current.style.transition = `transform ${transition.duration}s ${transition.timing}`;
     containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
+    setRotationValues({ x: 0, y: 0 });
   };
 
   return (
@@ -118,7 +168,8 @@ export const CardItem = ({
     const handleAnimations = () => {
       if (!ref.current) return;
 
-      ref.current.style.transition = "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)";
+      ref.current.style.transition =
+        "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)";
 
       if (isMouseEntered) {
         ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
@@ -128,7 +179,15 @@ export const CardItem = ({
     };
 
     handleAnimations();
-  }, [isMouseEntered, translateX, translateY, translateZ, rotateX, rotateY, rotateZ]);
+  }, [
+    isMouseEntered,
+    translateX,
+    translateY,
+    translateZ,
+    rotateX,
+    rotateY,
+    rotateZ,
+  ]);
 
   return (
     <Tag ref={ref} className={cn("w-fit", className)} {...rest}>

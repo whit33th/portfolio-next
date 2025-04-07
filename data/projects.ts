@@ -53,6 +53,25 @@ export const projects: IProject[] = [
     media: "video",
   },
   {
+    title: "Growee",
+    description:
+      "Smart & Cute reminder app that helps you water your plants on time. Keep your plants healthy!",
+    image: "/video/Growee.mkv",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Prisma",
+      "NeonDB",
+      "Next API",
+      "Clerk",
+      "Pinata",
+      "ESLint",
+    ],
+    media: "video",
+    git: "https://github.com/whit33th/growee",
+  },
+  {
     title: "Design studio",
     description:
       "Website for a design studio with a portfolio and contact form.",
