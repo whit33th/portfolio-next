@@ -38,7 +38,7 @@ export const projects: IProject[] = [
     title: "TrueSight",
     description:
       "League of Legends analytics platform with champion win rates, profile stats, match history data and game insights.",
-    image: "/video/TrueSight.mkv",
+    image: "/img/projects/TrueSight/1.webp",
     stack: [
       "Next.js",
       "TypeScript",
@@ -50,7 +50,6 @@ export const projects: IProject[] = [
       "Prisma",
       "ESLint",
     ],
-    media: "video",
   },
   {
     title: "Growee",
