@@ -4,6 +4,7 @@ import "./globals.css";
 import { SidebarDemo } from "../components/containers/sidebar";
 import { SidebarProvider } from "../components/UI/sidebar";
 import { AuroraBackground } from "../components/UI/aurora-background";
+import NextTopLoader from "nextjs-toploader";
 
 const robotoSans = Roboto({
   subsets: ["cyrillic", "greek", "latin"],
@@ -44,6 +45,7 @@ export default function RootLayout({
     <SidebarProvider animate={false}>
       <html lang="en">
         <body className={`${robotoSans.className} antialiased`}>
+          <NextTopLoader color="#2299DD" showSpinner={false} height={3} />
           <SidebarDemo>
             <main className="w-full h-screen overflow-y-auto">
               <AuroraBackground>{children}</AuroraBackground>
