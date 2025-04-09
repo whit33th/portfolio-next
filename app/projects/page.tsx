@@ -4,7 +4,7 @@ import React from "react";
 
 function page() {
   return (
-    <div className="grid grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-4 p-4">
+    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-4 p-4">
       {projects.map((project, index) => (
         <ThreeDCard
           key={index}
