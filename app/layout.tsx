@@ -3,7 +3,6 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import { SidebarDemo } from "../components/containers/sidebar";
 import { SidebarProvider } from "../components/UI/sidebar";
-import { AuroraBackground } from "../components/UI/aurora-background";
 import NextTopLoader from "nextjs-toploader";
 
 const robotoSans = Roboto({

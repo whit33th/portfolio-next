@@ -54,24 +54,13 @@ export default {
           "5": "hsl(var(--chart-5))",
         },
       },
-      animation: {
-        aurora: "aurora 60s linear infinite",
-      },
+      animation: {},
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      keyframes: {
-        aurora: {
-          from: {
-            backgroundPosition: "50% 50%, 50% 50%",
-          },
-          to: {
-            backgroundPosition: "350% 50%, 350% 50%",
-          },
-        },
-      },
+      keyframes: {},
     },
   },
 

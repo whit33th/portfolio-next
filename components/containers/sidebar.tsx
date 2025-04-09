@@ -13,7 +13,6 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Dock from "./Dock";
 import { usePathname } from "next/navigation";
-import { AuroraBackground } from "../UI/aurora-background";
 import Overlay from "../layouts/overlay";
 
 export function SidebarDemo({ children }: { children: React.ReactNode }) {
@@ -117,10 +116,15 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
           </div>
         </SidebarBody>
       </Sidebar>
-      <main className="w-full h-screen overflow-y-auto">
-        <AuroraBackground>
-          <Overlay key={pathname}>{children}</Overlay>
-        </AuroraBackground>
+      <main className="w-full h-screen overflow-y-auto relative">
+        <Image
+          src="/img/bg.png"
+          alt="Background"
+          width={1920}
+          height={1080}
+          className="fixed  w-full h-full object-cover z-[-1] opacity-10"
+        />
+        <Overlay key={pathname}>{children}</Overlay>
       </main>
     </div>
   );
