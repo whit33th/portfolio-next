@@ -12,8 +12,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Dock from "./Dock";
+import { usePathname } from "next/navigation";
+import { AuroraBackground } from "../UI/aurora-background";
+import Overlay from "../layouts/overlay";
 
 export function SidebarDemo({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
   const links = [
     {
       label: "Projects",
@@ -73,7 +77,12 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
             </>
             <div className="mt-8 flex flex-col gap-2">
               {links.map((link, idx) => (
-                <SidebarLink key={idx} link={link} onClick={handleLinkClick} />
+                <SidebarLink
+                  pathname={pathname}
+                  key={idx}
+                  link={link}
+                  onClick={handleLinkClick}
+                />
               ))}
             </div>
 
@@ -108,7 +117,11 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
           </div>
         </SidebarBody>
       </Sidebar>
-      {children}
+      <main className="w-full h-screen overflow-y-auto">
+        <AuroraBackground>
+          <Overlay key={pathname}>{children}</Overlay>
+        </AuroraBackground>
+      </main>
     </div>
   );
 }

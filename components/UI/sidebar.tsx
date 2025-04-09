@@ -17,7 +17,9 @@ interface SidebarContextProps {
   animate: boolean;
 }
 
-const SidebarContext = createContext<SidebarContextProps | undefined>(undefined);
+const SidebarContext = createContext<SidebarContextProps | undefined>(
+  undefined
+);
 
 export const useSidebar = () => {
   const context = useContext(SidebarContext);
@@ -118,7 +120,10 @@ export const MobileSidebar = ({
         {...props}
       >
         <div className="flex justify-end z-20 w-full">
-          <IconMenu2 className="text-neutral-200" onClick={() => setOpen(!open)} />
+          <IconMenu2
+            className="text-neutral-200"
+            onClick={() => setOpen(!open)}
+          />
         </div>
         <AnimatePresence>
           {open && (
@@ -154,11 +159,13 @@ export const SidebarLink = ({
   link,
   className,
   onClick,
+  pathname,
   ...props
 }: {
   link: Links;
   className?: string;
   onClick: () => void;
+  pathname: string;
   props?: LinkProps;
 }) => {
   const { open, animate } = useSidebar();
@@ -179,7 +186,9 @@ export const SidebarLink = ({
           display: animate ? (open ? "inline-block" : "none") : "inline-block",
           opacity: animate ? (open ? 1 : 0) : 1,
         }}
-        className=" text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0"
+        className={`${
+          pathname === link.href ? "" : "!opacity-80"
+        } text-sm group-hover/sidebar:translate-x-1  transition duration-150 whitespace-pre inline-block !p-0 !m-0`}
       >
         {link.label}
       </motion.span>

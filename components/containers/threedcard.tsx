@@ -18,13 +18,17 @@ export function ThreeDCard({
   return (
     <CardContainer className="inter-var flex flex-1 h-full">
       <CardBody className="bg-card relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-auto  h-auto rounded-xl p-6 border  ">
-        <CardItem translateZ="40" className="text-xl font-bold">
+        <CardItem translateZ="35" className="text-xl font-bold">
           {title}
         </CardItem>
-        <CardItem as="p" translateZ="50" className=" text-sm max-w-sm mt-2">
+        <CardItem
+          as="p"
+          translateZ="35"
+          className=" text-xs max-w-sm mt-1 text-black  p-2 rounded-xl bg-neutral-50"
+        >
           {description}
         </CardItem>
-        <CardItem translateZ="60" className="w-full mt-4">
+        <CardItem translateZ="45" className="w-full mt-4">
           {media === "image" ? (
             <Image
               src={image || "/img/grey.png"}
@@ -48,7 +52,7 @@ export function ThreeDCard({
         </CardItem>
         <div className="flex justify-between items-start mt-4 gap-4">
           <CardItem
-            translateZ={15}
+            translateZ={20}
             className=" rounded-xl text-xs font-normal "
           >
             <div className="flex flex-wrap gap-1 ">
@@ -64,7 +68,7 @@ export function ThreeDCard({
           </CardItem>
 
           {git && (
-            <CardItem translateZ={25}>
+            <CardItem translateZ={20}>
               <Link target="_blank" href={git}>
                 <HoverBorderGradient
                   as="button"

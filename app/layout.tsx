@@ -46,11 +46,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${robotoSans.className} antialiased`}>
           <NextTopLoader color="#2299DD" showSpinner={false} height={3} />
-          <SidebarDemo>
-            <main className="w-full h-screen overflow-y-auto">
-              <AuroraBackground>{children}</AuroraBackground>
-            </main>
-          </SidebarDemo>
+          <SidebarDemo>{children}</SidebarDemo>
         </body>
       </html>
     </SidebarProvider>

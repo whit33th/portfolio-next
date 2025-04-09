@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { stack } from "@/data/stack";
 import { CardBody, CardContainer, CardItem } from "../components/UI/3d-card";
@@ -7,7 +6,7 @@ import DecryptedText from "../components/containers/DecryptedText";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen p-4 z-10">
+    <div className="flex flex-col min-h-screen p-4 ">
       <div className="max-w-7xl mx-auto w-full">
         {/* Hero Section */}
         <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-start pt-20 pb-16">
