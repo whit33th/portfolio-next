@@ -4,6 +4,7 @@ import "./globals.css";
 import { SidebarDemo } from "../components/containers/sidebar";
 import { SidebarProvider } from "../components/UI/sidebar";
 import NextTopLoader from "nextjs-toploader";
+import { Analytics } from "@vercel/analytics/next";
 
 const robotoSans = Roboto({
   subsets: ["cyrillic", "greek", "latin"],
@@ -46,6 +47,7 @@ export default function RootLayout({
         <body className={`${robotoSans.className} antialiased`}>
           <NextTopLoader color="#2299DD" showSpinner={false} height={3} />
           <SidebarDemo>{children}</SidebarDemo>
+          <Analytics />
         </body>
       </html>
     </SidebarProvider>
