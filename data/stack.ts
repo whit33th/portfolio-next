@@ -43,9 +43,29 @@ export const stack: IStackCategory[] = [
         description: "State Management Library",
       },
       {
+        name: "Prisma",
+        icon: "/img/stack/prisma.webp",
+        description: "ORM Service",
+      },
+      {
+        name: "Framer Motion",
+        icon: "/img/stack/motion.webp",
+        description: "Animation Library",
+      },
+      {
+        name: "PostgreSQL",
+        icon: "/img/stack/postgresql.webp",
+        description: "Relational Database",
+      },
+      {
         name: "Supabase",
         icon: "/img/stack/supabase.svg",
         description: "Database and Auth Service",
+      },
+      {
+        name: "Clerk",
+        icon: "/img/stack/clerk.webp",
+        description: "Authentication Service",
       },
       {
         name: "Kinde",
@@ -68,13 +88,13 @@ export const stack: IStackCategory[] = [
         description: "Code Hosting Platform",
       },
       {
-        name: "Netlify",
-        icon: "/img/stack/netlify.svg",
-        description: "Web Hosting Service",
-      },
-      {
         name: "Vercel",
         icon: "/img/stack/vercel.webp",
+        description: "Deployment Platform",
+      },
+      {
+        name: "Netlify",
+        icon: "/img/stack/netlify.svg",
         description: "Deployment Platform",
       },
       {

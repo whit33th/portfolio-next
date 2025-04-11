@@ -28,25 +28,15 @@ export default function Home() {
           <div className="flex-1 space-y-8">
             <div className="space-y-4">
               <h2 className="bg-gradient-to-r from-neutral-200 to-neutral-500 bg-clip-text pb-1 text-6xl font-bold text-transparent">
-                <DecryptedText
-                  speed={70}
-                  animateOn={"view"}
-                  text="Daniil Kaminskyi"
-                />
+                Daniil Kaminskyi
               </h2>
-              <p className="text-lg text-neutral-400">
-                <DecryptedText
-                  speed={80}
-                  animateOn={"view"}
-                  text="Frontend Developer"
-                />
-              </p>
+              <p className="text-lg text-neutral-400">Frontend Developer</p>
             </div>
 
             <div className="space-y-6">
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-neutral-200">
-                  <DecryptedText speed={90} animateOn={"view"} text="About" />
+                  About
                 </h3>
                 <p className="leading-relaxed text-neutral-400">
                   <DecryptedText
@@ -60,11 +50,7 @@ export default function Home() {
               {/* Experience Section */}
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-neutral-200">
-                  <DecryptedText
-                    speed={90}
-                    animateOn={"view"}
-                    text="Experience"
-                  />
+                  Experience
                 </h3>
                 <div className="space-y-3">
                   {experience.map((exp) => (
@@ -117,7 +103,7 @@ export default function Home() {
           {/* What I Do */}
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-neutral-200">
-              <DecryptedText speed={90} animateOn={"view"} text="What I Do" />
+              What I Do
             </h3>
             <div className="grid gap-4">
               <div className="rounded-xl border border-[#191919] bg-[#0c0c0c] p-4">
@@ -174,7 +160,7 @@ export default function Home() {
           {/* Education */}
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-neutral-200">
-              <DecryptedText speed={90} animateOn={"view"} text="Education" />
+              Education
             </h3>
             <div className="rounded-xl border border-[#191919] bg-[#0c0c0c] p-4">
               <p className="font-medium">
@@ -203,13 +189,9 @@ export default function Home() {
         </div>
 
         {/* Skills Section */}
-        <div className="space-y-8 pt-16">
+        <div className="space-y-4">
           <h3 className="text-2xl font-semibold text-neutral-200">
-            <DecryptedText
-              speed={90}
-              animateOn={"view"}
-              text="Skills & Tools"
-            />
+            Skills & Tools
           </h3>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {stack.map((category) => (

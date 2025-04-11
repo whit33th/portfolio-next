@@ -63,6 +63,7 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
                   width={64}
                   height={64}
                   alt="My photo"
+                  loading="eager"
                 />
                 <div className="ml-4 flex flex-col">
                   <h2 className="text-center text-lg font-semibold text-neutral-200 sm:text-start">
