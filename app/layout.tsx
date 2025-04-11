@@ -47,7 +47,7 @@ export default function RootLayout({
         <body className={`${robotoSans.className} antialiased`}>
           <NextTopLoader color="#2299DD" showSpinner={false} height={3} />
           <SidebarDemo>{children}</SidebarDemo>
-          <Analytics />\
+          <Analytics />
           <SpeedInsights />
         </body>
       </html>

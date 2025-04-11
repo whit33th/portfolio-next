@@ -48,24 +48,24 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
   return (
     <div
       className={cn(
-        "rounded-md flex flex-col md:flex-row w-full flex-1 overflow-hidden",
-        "h-screen"
+        "flex w-full flex-1 flex-col overflow-hidden rounded-md md:flex-row",
+        "h-screen",
       )}
     >
       <Sidebar open={open} setOpen={setOpen} animate={false}>
         <SidebarBody className="justify-between gap-10">
-          <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
+          <div className="flex flex-1 flex-col overflow-y-auto overflow-x-hidden px-4 md:px-0">
             <>
-              <div className="flex flex-col md:flex-row items-center sm:gap-0 gap-2 ">
+              <div className="flex flex-col items-center gap-2 sm:gap-0 md:flex-row">
                 <Image
                   src="/img/me.webp"
-                  className="h-12 w-12 flex-shrink-0 rounded-xl aspect-square object-cover"
+                  className="aspect-square h-24 w-24 flex-shrink-0 rounded-xl object-cover md:h-12 md:w-12"
                   width={64}
                   height={64}
                   alt="My photo"
                 />
                 <div className="ml-4 flex flex-col">
-                  <h2 className="text-lg font-semibold text-neutral-200 text-center sm:text-start">
+                  <h2 className="text-center text-lg font-semibold text-neutral-200 sm:text-start">
                     Daniil Kaminskyi
                   </h2>
                   <p className="text-sm text-neutral-400">
@@ -85,23 +85,23 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
               ))}
             </div>
 
-            <div className="mt-auto ">
-              <div className="px-2 mb-4">
-                <div className="bg-[#0c0c0c] border border-[#191919] rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-neutral-200 mb-2">
+            <div className="mt-auto">
+              <div className="my-4">
+                <div className="rounded-xl border border-[#191919] bg-[#0c0c0c] p-6">
+                  <h3 className="mb-2 text-lg font-semibold text-neutral-200">
                     Resume
                   </h3>
-                  <p className="text-sm text-neutral-400 mb-4">
+                  <p className="mb-4 text-sm text-neutral-400">
                     Get my latest resume in PDF format
                   </p>
-                  <p className="text-xs mb-2 text-neutral-500">
+                  <p className="mb-2 text-xs text-neutral-500">
                     {" "}
                     Last updated 2025
                   </p>
 
                   <button
                     onClick={handleDownload}
-                    className=" w-full flex justify-center items-center gap-1 bg-[#0c0c0c] hover:bg-[#151515] border border-[#191919] rounded-xl px-8 py-4 text-neutral-200 font-medium transition-colors"
+                    className="flex w-full items-center justify-center gap-1 rounded-xl border border-[#191919] bg-[#0c0c0c] px-8 py-4 font-medium text-neutral-200 transition-colors hover:bg-[#151515]"
                   >
                     <IconDownload className="h-4 w-4" />
                     <span className="font-medium">Download</span>
@@ -116,13 +116,13 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
           </div>
         </SidebarBody>
       </Sidebar>
-      <main className="w-full h-screen overflow-y-auto relative">
+      <main className="relative h-screen w-full overflow-y-auto">
         <Image
           src="/img/bg.png"
           alt="Background"
           width={1920}
           height={1080}
-          className="fixed  w-full h-full object-cover z-[-1] opacity-10"
+          className="fixed z-[-1] h-full w-full object-cover opacity-10"
         />
         <Overlay key={pathname}>{children}</Overlay>
       </main>
@@ -133,13 +133,13 @@ export const Logo = () => {
   return (
     <Link
       href="#"
-      className="font-normal flex space-x-2 items-center text-sm py-1 relative z-20"
+      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal"
     >
       <div className="" />
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="font-medium whitespace-pre"
+        className="whitespace-pre font-medium"
       >
         &lt;whit33th/&gt;
       </motion.span>
@@ -150,9 +150,9 @@ export const LogoIcon = () => {
   return (
     <Link
       href="#"
-      className="font-normal flex space-x-2 items-center text-sm py-1 relative z-20"
+      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal"
     >
-      <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0" />
+      <div className="h-5 w-6 flex-shrink-0 rounded-bl-sm rounded-br-lg rounded-tl-lg rounded-tr-sm bg-black dark:bg-white" />
     </Link>
   );
 };

@@ -1,14 +1,14 @@
 interface ITechnology {
   name: string;
   icon: string;
-  description: string; 
+  description: string;
 }
 interface IStackCategory {
   name: string;
   content: ITechnology[];
 }
 
-export const stack:IStackCategory[] = [
+export const stack: IStackCategory[] = [
   {
     name: "Frontend",
     content: [

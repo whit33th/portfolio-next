@@ -42,17 +42,20 @@ const Dock = ({
   const [currentPosition, setCurrentPosition] = useState<Position>(position);
 
   // gets the position-based translation
-  const getTranslateValue = useCallback((position: Position, isHovered: boolean) => {
-    if (!isHovered) return "translateX(0px) translateY(0px)";
+  const getTranslateValue = useCallback(
+    (position: Position, isHovered: boolean) => {
+      if (!isHovered) return "translateX(0px) translateY(0px)";
 
-    const translations = {
-      left: "translateX(5px) translateY(0px)",
-      right: "translateX(-5px) translateY(0px)",
-      top: "translateX(0px) translateY(5px)",
-      bottom: "translateX(0px) translateY(-5px)",
-    };
-    return translations[position];
-  }, []);
+      const translations = {
+        left: "translateX(5px) translateY(0px)",
+        right: "translateX(-5px) translateY(0px)",
+        top: "translateX(0px) translateY(5px)",
+        bottom: "translateX(0px) translateY(-5px)",
+      };
+      return translations[position];
+    },
+    [],
+  );
 
   // creates the spring for all items
   const [springs, api] = useSprings(
@@ -62,14 +65,15 @@ const Dock = ({
       translate: "translateX(0px) translateY(0px)",
       config: { tension: 200, friction: 15 },
     }),
-    [currentPosition]
+    [currentPosition],
   );
 
   // updates the springs when hover state changes
   useEffect(() => {
     api.start((index) => {
       const isHovered = index === hoverIndex;
-      const isNeighbor = hoverIndex !== null && Math.abs(hoverIndex - index) === 1;
+      const isNeighbor =
+        hoverIndex !== null && Math.abs(hoverIndex - index) === 1;
 
       return {
         scale: isHovered ? 1.5 : isNeighbor ? 1.3 : 1,
@@ -99,7 +103,9 @@ const Dock = ({
   // handles the responsive positioning
   useEffect(() => {
     const updatePosition = () => {
-      setCurrentPosition(responsive && window.innerWidth <= 768 ? responsive : position);
+      setCurrentPosition(
+        responsive && window.innerWidth <= 768 ? responsive : position,
+      );
     };
 
     updatePosition();
@@ -125,25 +131,23 @@ const Dock = ({
 
   return (
     <div
-      className={`absolute w-full h-full pointer-events-none flex ${getDockStyle(
-        currentPosition
+      className={`pointer-events-none absolute flex h-full w-full ${getDockStyle(
+        currentPosition,
       )}`}
       onMouseEnter={handleParentMouseEnter}
       onMouseLeave={handleParentMouseLeave}
     >
       <animated.div
-        
-        className="flex w-full pointer-events-auto  transition-all duration-200 ease-out justify-center"
+        className="pointer-events-auto flex w-full justify-center transition-all duration-200 ease-out"
         style={visibilitySpring}
       >
         {SOCIAL_ITEMS.map((item, index) => (
           <animated.div
-            
             key={index}
-            className="bg-[#0c0c0c] mx-1 w-10 h-10 rounded-lg border border-[#191919] flex relative z-0 items-center justify-center transition-all duration-100 ease-out cursor-pointer pointer-events-auto hover:z-[2] hover:bg-[#151515] hover:transition-colors hover:duration-300"
+            className="pointer-events-auto relative z-0 mx-1 flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-[#191919] bg-[#0c0c0c] transition-all duration-100 ease-out hover:z-[2] hover:bg-[#151515] hover:transition-colors hover:duration-300"
             style={{
               transform: springs[index].scale.to(
-                (s) => `${springs[index].translate.get()} scale(${s})`
+                (s) => `${springs[index].translate.get()} scale(${s})`,
               ),
             }}
             onMouseEnter={() => handleMouseEnter(index)}
@@ -153,7 +157,7 @@ const Dock = ({
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-200 hover:text-neutral-100 flex items-center justify-center w-full h-full"
+              className="flex h-full w-full items-center justify-center text-neutral-200 hover:text-neutral-100"
               title={item.label}
             >
               {item.icon}

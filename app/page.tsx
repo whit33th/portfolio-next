@@ -6,11 +6,11 @@ import DecryptedText from "../components/containers/DecryptedText";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen p-4 ">
-      <div className="max-w-7xl mx-auto w-full">
+    <div className="flex min-h-screen flex-col p-4">
+      <div className="mx-auto w-full max-w-7xl">
         {/* Hero Section */}
-        <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-start pt-20 pb-16">
-          <CardContainer className="relative w-48 h-48 lg:w-[400px] lg:h-[500px] rounded-xl overflow-hidden border border-neutral-800">
+        <div className="flex flex-col items-center gap-12 pb-16 pt-20 lg:flex-row lg:items-start">
+          <CardContainer className="relative h-48 w-48 overflow-hidden rounded-xl border border-neutral-800 lg:h-[500px] lg:w-[400px]">
             <CardBody>
               <CardItem translateZ={40}>
                 <Image
@@ -19,7 +19,7 @@ export default function Home() {
                   width={1000}
                   height={1000}
                   loading="eager"
-                  className="object-cover "
+                  className="object-cover"
                 />
               </CardItem>
             </CardBody>
@@ -27,7 +27,7 @@ export default function Home() {
 
           <div className="flex-1 space-y-8">
             <div className="space-y-4">
-              <h2 className="text-6xl pb-1 font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-200 to-neutral-500">
+              <h2 className="bg-gradient-to-r from-neutral-200 to-neutral-500 bg-clip-text pb-1 text-6xl font-bold text-transparent">
                 <DecryptedText
                   speed={70}
                   animateOn={"view"}
@@ -48,7 +48,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-neutral-200">
                   <DecryptedText speed={90} animateOn={"view"} text="About" />
                 </h3>
-                <p className="text-neutral-400 leading-relaxed">
+                <p className="leading-relaxed text-neutral-400">
                   <DecryptedText
                     speed={50}
                     animateOn={"view"}
@@ -70,7 +70,7 @@ export default function Home() {
                   {experience.map((exp) => (
                     <div
                       key={exp.id}
-                      className="bg-[#0c0c0c] p-4 rounded-xl border border-[#191919] hover:border-neutral-700 transition-colors"
+                      className="rounded-xl border border-[#191919] bg-[#0c0c0c] p-4 transition-colors hover:border-neutral-700"
                     >
                       <p className="font-medium">
                         <DecryptedText
@@ -93,7 +93,7 @@ export default function Home() {
                           text={exp.period}
                         />
                       </p>
-                      <ul className="mt-2 text-sm text-neutral-400 list-disc ml-4">
+                      <ul className="ml-4 mt-2 list-disc text-sm text-neutral-400">
                         {exp.responsibilities.map((responsibility, index) => (
                           <li key={index}>
                             <DecryptedText
@@ -113,14 +113,14 @@ export default function Home() {
         </div>
 
         {/* What I Do & Education Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-12 border-t border-neutral-800">
+        <div className="grid grid-cols-1 gap-8 border-t border-neutral-800 py-12 lg:grid-cols-2">
           {/* What I Do */}
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-neutral-200">
               <DecryptedText speed={90} animateOn={"view"} text="What I Do" />
             </h3>
             <div className="grid gap-4">
-              <div className="bg-[#0c0c0c] p-4 rounded-xl border border-[#191919]">
+              <div className="rounded-xl border border-[#191919] bg-[#0c0c0c] p-4">
                 <p className="font-medium">
                   <DecryptedText
                     speed={70}
@@ -136,7 +136,7 @@ export default function Home() {
                   />
                 </p>
               </div>
-              <div className="bg-[#0c0c0c] p-4 rounded-xl border border-[#191919]">
+              <div className="rounded-xl border border-[#191919] bg-[#0c0c0c] p-4">
                 <p className="font-medium">
                   <DecryptedText
                     speed={70}
@@ -152,7 +152,7 @@ export default function Home() {
                   />
                 </p>
               </div>
-              <div className="bg-[#0c0c0c] p-4 rounded-xl border border-[#191919]">
+              <div className="rounded-xl border border-[#191919] bg-[#0c0c0c] p-4">
                 <p className="font-medium">
                   <DecryptedText
                     speed={70}
@@ -176,7 +176,7 @@ export default function Home() {
             <h3 className="text-xl font-semibold text-neutral-200">
               <DecryptedText speed={90} animateOn={"view"} text="Education" />
             </h3>
-            <div className="bg-[#0c0c0c] p-4 rounded-xl border border-[#191919]">
+            <div className="rounded-xl border border-[#191919] bg-[#0c0c0c] p-4">
               <p className="font-medium">
                 <DecryptedText
                   speed={70}
@@ -184,7 +184,7 @@ export default function Home() {
                   text="Informatics (Faculty of Applied Sciences)"
                 />
               </p>
-              <p className="text-sm text-neutral-400 mt-1">
+              <p className="mt-1 text-sm text-neutral-400">
                 <DecryptedText
                   speed={60}
                   animateOn={"view"}
@@ -203,7 +203,7 @@ export default function Home() {
         </div>
 
         {/* Skills Section */}
-        <div className="pt-16 space-y-8">
+        <div className="space-y-8 pt-16">
           <h3 className="text-2xl font-semibold text-neutral-200">
             <DecryptedText
               speed={90}
@@ -211,13 +211,13 @@ export default function Home() {
               text="Skills & Tools"
             />
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {stack.map((category) => (
               <div
                 key={category.name}
-                className="bg-[#0c0c0c] p-6 rounded-xl border border-[#191919]"
+                className="rounded-xl border border-[#191919] bg-[#0c0c0c] p-6"
               >
-                <h4 className="font-medium mb-4">
+                <h4 className="mb-4 font-medium">
                   <DecryptedText
                     speed={70}
                     animateOn={"view"}
@@ -235,9 +235,9 @@ export default function Home() {
                         alt={tech.name}
                         width={24}
                         height={24}
-                        className="w-6 h-6"
+                        className="h-6 w-6"
                       />
-                      <span className="text-[10px] text-neutral-400 text-center">
+                      <span className="text-center text-[10px] text-neutral-400">
                         <DecryptedText
                           speed={40}
                           animateOn={"view"}

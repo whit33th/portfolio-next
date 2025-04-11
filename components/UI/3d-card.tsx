@@ -128,8 +128,8 @@ export const CardBody = ({
   return (
     <div
       className={cn(
-        " [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
-        className
+        "[transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]",
+        className,
       )}
     >
       {children}

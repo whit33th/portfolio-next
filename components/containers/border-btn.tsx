@@ -7,7 +7,7 @@ export function BorderBtn({ children }: { children: React.ReactNode }) {
       <HoverBorderGradient
         containerClassName="rounded-full"
         as="button"
-        className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+        className="flex items-center space-x-2 bg-white text-black dark:bg-black dark:text-white"
       >
         {children}
       </HoverBorderGradient>

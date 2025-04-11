@@ -27,7 +27,7 @@ export const Cover = ({
       const numberOfBeams = Math.floor(height / 10); // Adjust the divisor to control the spacing
       const positions = Array.from(
         { length: numberOfBeams },
-        (_, i) => (i + 1) * (height / (numberOfBeams + 1))
+        (_, i) => (i + 1) * (height / (numberOfBeams + 1)),
       );
       setBeamPositions(positions);
     }
@@ -38,7 +38,7 @@ export const Cover = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       ref={ref}
-      className="relative  group/cover inline-block  transition duration-200 rounded-sm"
+      className="group/cover relative inline-block rounded-sm transition duration-200"
     >
       <AnimatePresence>
         {hovered && (
@@ -51,7 +51,7 @@ export const Cover = ({
                 duration: 0.2,
               },
             }}
-            className="h-full w-full overflow-hidden absolute inset-0"
+            className="absolute inset-0 h-full w-full overflow-hidden"
           >
             <motion.div
               animate={{
@@ -64,14 +64,14 @@ export const Cover = ({
                   repeat: Infinity,
                 },
               }}
-              className="w-[200%] h-full flex"
+              className="flex h-full w-[200%]"
             >
               <SparklesCore
                 background="transparent"
                 minSize={0.4}
                 maxSize={1}
                 particleDensity={500}
-                className="w-full h-full"
+                className="h-full w-full"
                 particleColor="#FFFFFF"
               />
               <SparklesCore
@@ -79,7 +79,7 @@ export const Cover = ({
                 minSize={0.4}
                 maxSize={1}
                 particleDensity={500}
-                className="w-full h-full"
+                className="h-full w-full"
                 particleColor="#FFFFFF"
               />
             </motion.div>
@@ -130,7 +130,7 @@ export const Cover = ({
             duration: 0.2,
           },
         }}
-        className={cn(" relative z-20  transition duration-200", className)}
+        className={cn("relative z-20 transition duration-200", className)}
       >
         {children}
       </motion.span>
@@ -187,11 +187,11 @@ export const Beam = ({
             y2: 0,
           }}
           transition={{
-            duration: hovered ? 0.8 : duration ?? 1.5,
+            duration: hovered ? 0.8 : (duration ?? 1.5),
             ease: "linear",
             repeat: Infinity,
             delay: hovered ? Math.random() * (1 - 0.2) + 0.2 : 0,
-            repeatDelay: hovered ? Math.random() * (2 - 1) + 1 : delay ?? 1,
+            repeatDelay: hovered ? Math.random() * (2 - 1) + 1 : (delay ?? 1),
           }}
         >
           <stop stopColor="#2EB9DF" stopOpacity="0" />
@@ -212,8 +212,8 @@ export const CircleIcon = ({
   return (
     <div
       className={cn(
-        `pointer-events-none animate-pulse group-hover/cover:hidden group-hover/cover:opacity-100 group h-2 w-2 rounded-full bg-neutral-600 dark:bg-white opacity-20 group-hover/cover:bg-white`,
-        className
+        `group pointer-events-none h-2 w-2 animate-pulse rounded-full bg-neutral-600 opacity-20 group-hover/cover:hidden group-hover/cover:bg-white group-hover/cover:opacity-100 dark:bg-white`,
+        className,
       )}
     ></div>
   );

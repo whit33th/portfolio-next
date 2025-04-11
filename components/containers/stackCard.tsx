@@ -19,15 +19,15 @@ export default function StackCard({
       className="flex flex-col items-center gap-2"
     >
       <Image
-        className="rounded-xl drop-shadow-lg aspect-square w-16 h-16 sm:w-20 sm:h-20"
+        className="aspect-square h-16 w-16 rounded-xl drop-shadow-lg sm:h-20 sm:w-20"
         src={tech.icon}
         alt={tech.name}
         width={80}
         height={80}
       />
       <div className="flex flex-col items-center">
-        <span className="text-sm font-medium text-center">{tech.name}</span>
-        <span className="text-xs text-zinc-400 text-center">
+        <span className="text-center text-sm font-medium">{tech.name}</span>
+        <span className="text-center text-xs text-zinc-400">
           {tech.description}
         </span>
       </div>

@@ -16,32 +16,32 @@ export function ThreeDCard({
   media = "image",
 }: IProject) {
   return (
-    <CardContainer className="inter-var flex flex-1 h-full">
-      <CardBody className="bg-card relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-auto  h-auto rounded-xl p-6 border  ">
+    <CardContainer className="inter-var flex h-full flex-1">
+      <CardBody className="group/card relative h-auto w-auto rounded-xl border border-black/[0.1] bg-card p-6 dark:border-white/[0.2] dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1]">
         <CardItem translateZ="35" className="text-xl font-bold">
           {title}
         </CardItem>
         <CardItem
           as="p"
           translateZ="35"
-          className=" text-xs max-w-sm mt-1 text-black  p-2 rounded-xl bg-neutral-50"
+          className="mt-1 max-w-sm rounded-xl bg-neutral-50 p-2 text-xs text-black"
         >
           {description}
         </CardItem>
-        <CardItem translateZ="45" className="w-full mt-4">
+        <CardItem translateZ="45" className="mt-4 w-full">
           {media === "image" ? (
             <Image
               src={image || "/img/grey.png"}
               height="1000"
               width="1000"
-              className="w-full object-cover aspect-video rounded-xl group-hover/card:shadow-xl"
+              className="aspect-video w-full rounded-xl object-cover group-hover/card:shadow-xl"
               alt="thumbnail"
               loading="eager"
             />
           ) : (
             <video
               src={image}
-              className="w-full object-cover aspect-video rounded-xl group-hover/card:shadow-xl"
+              className="aspect-video w-full rounded-xl object-cover group-hover/card:shadow-xl"
               autoPlay
               poster="/img/grey.png"
               muted
@@ -50,16 +50,13 @@ export function ThreeDCard({
             />
           )}
         </CardItem>
-        <div className="flex justify-between items-start mt-4 gap-4">
-          <CardItem
-            translateZ={20}
-            className=" rounded-xl text-xs font-normal "
-          >
-            <div className="flex flex-wrap gap-1 ">
+        <div className="mt-4 flex items-start justify-between gap-4">
+          <CardItem translateZ={20} className="rounded-xl text-xs font-normal">
+            <div className="flex flex-wrap gap-1">
               {stack.map((tech, index) => (
                 <span
                   key={index}
-                  className="bg-foreground text-black px-2 py-1 rounded-2xl text-[12px] font-bold whitespace-nowrap"
+                  className="whitespace-nowrap rounded-2xl bg-foreground px-2 py-1 text-[12px] font-bold text-black"
                 >
                   {tech}
                 </span>
@@ -72,7 +69,7 @@ export function ThreeDCard({
               <Link target="_blank" href={git}>
                 <HoverBorderGradient
                   as="button"
-                  className="px-4 py-2 rounded-xl bg-black dark:bg-white  text-xs font-bold"
+                  className="rounded-xl bg-black px-4 py-2 text-xs font-bold dark:bg-white"
                 >
                   <span>GitHub</span>
                 </HoverBorderGradient>
