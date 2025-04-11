@@ -24,7 +24,7 @@ export function ThreeDCard({
         <CardItem
           as="p"
           translateZ="35"
-          className="mt-1 max-w-sm rounded-xl bg-foreground p-2 text-xs text-black"
+          className="mt-1 max-w-sm rounded-xl bg-foreground p-2 font-mono text-xs text-black"
         >
           {description}
         </CardItem>
