@@ -127,22 +127,6 @@ export default function Home() {
                   <DecryptedText
                     speed={70}
                     animateOn={"view"}
-                    text="UI/UX Design"
-                  />
-                </p>
-                <p className="text-sm text-neutral-400">
-                  <DecryptedText
-                    speed={50}
-                    animateOn={"view"}
-                    text="Creating intuitive user interfaces"
-                  />
-                </p>
-              </div>
-              <div className="rounded-xl border border-[#191919] bg-[#0c0c0c] p-4">
-                <p className="font-medium">
-                  <DecryptedText
-                    speed={70}
-                    animateOn={"view"}
                     text="Web Performance"
                   />
                 </p>
@@ -151,6 +135,18 @@ export default function Home() {
                     speed={50}
                     animateOn={"view"}
                     text="Optimizing for speed and efficiency"
+                  />
+                </p>
+              </div>
+              <div className="rounded-xl border border-[#191919] bg-[#0c0c0c] p-4">
+                <p className="font-medium">
+                  <DecryptedText speed={70} animateOn={"view"} text="Testing" />
+                </p>
+                <p className="text-sm text-neutral-400">
+                  <DecryptedText
+                    speed={50}
+                    animateOn={"view"}
+                    text="Creating reliable and efficient end-to-end tests"
                   />
                 </p>
               </div>
