@@ -146,7 +146,7 @@ export default function Home() {
                   <DecryptedText
                     speed={50}
                     animateOn={"view"}
-                    text="Creating reliable and efficient end-to-end tests"
+                    text="Creating reliable end-to-end tests"
                   />
                 </p>
               </div>
