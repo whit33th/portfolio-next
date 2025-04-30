@@ -48,6 +48,11 @@ export const stack: IStackCategory[] = [
         description: "ORM Service",
       },
       {
+        name: "Playwright",
+        icon: "/img/stack/playwright.svg",
+        description: "End-to-End Testing Library",
+      },
+      {
         name: "Framer Motion",
         icon: "/img/stack/motion.webp",
         description: "Animation Library",
