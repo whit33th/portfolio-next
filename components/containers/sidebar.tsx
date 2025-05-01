@@ -123,7 +123,7 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
           alt="Background"
           width={1920}
           height={1080}
-          className="fixed z-[-1] h-full w-full object-cover opacity-10"
+          className="fixed z-[-1] h-full w-full object-cover opacity-15"
         />
         <Overlay key={pathname}>{children}</Overlay>
       </main>
