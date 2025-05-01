@@ -1,19 +1,19 @@
 "use client";
-import { useState } from "react";
-import { Sidebar, SidebarBody, SidebarLink } from "../UI/sidebar";
+import { cn } from "@/lib/utils";
 import {
   IconCode,
+  IconDownload,
   IconStack2,
   IconUser,
-  IconDownload,
 } from "@tabler/icons-react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
-import Dock from "./Dock";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import Overlay from "../layouts/overlay";
+import { Sidebar, SidebarBody, SidebarLink } from "../UI/sidebar";
+import Dock from "./Dock";
 
 export function SidebarDemo({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -136,7 +136,7 @@ export const Logo = () => {
       href="#"
       className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal"
     >
-      <div className="" />
+      <div />
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
