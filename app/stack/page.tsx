@@ -1,8 +1,5 @@
-import React from "react";
-
-import { stack } from "@/data/stack";
-
 import StackCard from "@/components/containers/stackCard";
+import { stack } from "@/data/stack";
 
 function page() {
   const allTechnologies = stack.flatMap((c) => c.content);

@@ -17,13 +17,34 @@ export function ThreeDCard({
   return (
     <CardContainer className="inter-var flex h-full flex-1">
       <CardBody className="group/card relative h-auto w-auto rounded-xl border border-black/[0.1] bg-card p-6 dark:border-white/[0.2] dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1]">
-        <CardItem translateZ="35" className="text-xl font-bold">
+        <CardItem
+          translateZ="35"
+          className="flex w-full justify-between text-xl font-bold"
+        >
           {title}
+          {git && (
+            <Link target="_blank" href={git}>
+              <HoverBorderGradient
+                as="button"
+                className="rounded-xl bg-black px-1.5 py-1.5 text-xs font-bold dark:bg-white"
+              >
+                {/* <span>GitHub</span> */}
+                <Image
+                  src="/img/stack/github.svg"
+                  alt="GitHub"
+                  width={20}
+                  height={20}
+                  className="h-4 w-4"
+                  loading="lazy"
+                />
+              </HoverBorderGradient>
+            </Link>
+          )}
         </CardItem>
         <CardItem
           as="p"
           translateZ="35"
-          className="mt-1 max-w-sm rounded-xl bg-foreground p-2 font-mono text-xs text-black"
+          className="mt-2 rounded-xl bg-foreground p-2 font-mono text-xs text-black"
         >
           {description}
         </CardItem>
@@ -62,19 +83,6 @@ export function ThreeDCard({
               ))}
             </div>
           </CardItem>
-
-          {git && (
-            <CardItem translateZ={20}>
-              <Link target="_blank" href={git}>
-                <HoverBorderGradient
-                  as="button"
-                  className="rounded-xl bg-black px-4 py-2 text-xs font-bold dark:bg-white"
-                >
-                  <span>GitHub</span>
-                </HoverBorderGradient>
-              </Link>
-            </CardItem>
-          )}
         </div>
       </CardBody>
     </CardContainer>

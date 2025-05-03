@@ -1,6 +1,5 @@
-import { ThreeDCard } from "../../components/containers/threedcard";
 import { projects } from "@/data/projects";
-import React from "react";
+import { ThreeDCard } from "../../components/containers/threedcard";
 
 function page() {
   return (
