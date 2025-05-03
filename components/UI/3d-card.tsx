@@ -35,7 +35,6 @@ export const CardContainer = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMouseEntered, setIsMouseEntered] = useState(false);
-  const [rotationValues, setRotationValues] = useState({ x: 0, y: 0 });
   const lastMousePosition = useRef({ x: 0, y: 0 });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -58,12 +57,6 @@ export const CardContainer = ({
     // Apply damping to smooth the effect
     const dampX = x / (rotateX * damping);
     const dampY = y / (rotateY * damping);
-
-    // Set the new rotation values with damping
-    setRotationValues({
-      x: -dampY,
-      y: dampX,
-    });
 
     // Apply the transformation
     containerRef.current.style.transform = `rotateY(${dampX}deg) rotateX(${-dampY}deg)`;
@@ -90,7 +83,6 @@ export const CardContainer = ({
     setIsMouseEntered(false);
     containerRef.current.style.transition = `transform ${transition.duration}s ${transition.timing}`;
     containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
-    setRotationValues({ x: 0, y: 0 });
   };
 
   return (
