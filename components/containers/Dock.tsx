@@ -137,13 +137,13 @@ const Dock = ({
       onMouseEnter={handleParentMouseEnter}
       onMouseLeave={handleParentMouseLeave}
     >
-      {/* @ts-ignore */}
+      {/* @ts-expect-error - animated.div from react-spring has incompatible style props with TypeScript */}
       <animated.div
         className="pointer-events-auto flex w-full justify-center transition-all duration-200 ease-out"
         style={visibilitySpring}
       >
         {SOCIAL_ITEMS.map((item, index) => (
-          // @ts-ignore
+          // @ts-expect-error - animated.div from react-spring has incompatible style props with TypeScript
           <animated.div
             key={index}
             className="pointer-events-auto relative z-0 mx-1 flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-[#191919] bg-[#0c0c0c] transition-all duration-100 ease-out hover:z-[2] hover:bg-[#151515] hover:transition-colors hover:duration-300"
