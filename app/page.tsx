@@ -16,8 +16,8 @@ export default function Home() {
                 <Image
                   src="/img/me.webp"
                   alt="My photo"
-                  width={1000}
-                  height={1000}
+                  width={400}
+                  height={400}
                   loading="eager"
                   className="object-cover"
                 />

@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
-import React from "react";
-import { CardBody, CardContainer, CardItem } from "../UI/3d-card";
-import Link from "next/link";
-import { HoverBorderGradient } from "../UI/hover-border-gradient";
 import { IProject } from "@/data/projects";
+import Image from "next/image";
+import Link from "next/link";
+import { CardBody, CardContainer, CardItem } from "../UI/3d-card";
+import { HoverBorderGradient } from "../UI/hover-border-gradient";
 
 export function ThreeDCard({
   image,
