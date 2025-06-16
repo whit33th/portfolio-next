@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import "./globals.css";
+import NextTopLoader from "nextjs-toploader";
 import { SidebarDemo } from "../components/containers/sidebar";
 import { SidebarProvider } from "../components/UI/sidebar";
-import NextTopLoader from "nextjs-toploader";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import "./globals.css";
 const robotoSans = Roboto({
   subsets: ["cyrillic", "greek", "latin"],
   weight: ["400", "700"],
@@ -44,11 +42,9 @@ export default function RootLayout({
   return (
     <SidebarProvider animate={false}>
       <html lang="en">
-        <body className={`${robotoSans.className} antialiased`}>
+        <body className={`${robotoSans.className} overflow-hidden antialiased`}>
           <NextTopLoader color="#2299DD" showSpinner={false} height={3} />
           <SidebarDemo>{children}</SidebarDemo>
-          <Analytics />
-          <SpeedInsights />
         </body>
       </html>
     </SidebarProvider>

@@ -49,7 +49,7 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
     <div
       className={cn(
         "flex w-full flex-1 flex-col overflow-hidden rounded-md md:flex-row",
-        "h-screen",
+        "sticky left-0 top-0 h-screen",
       )}
     >
       <Sidebar open={open} setOpen={setOpen} animate={false}>
