@@ -53,26 +53,23 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
       <Sidebar open={open} setOpen={setOpen} animate={false}>
         <SidebarBody className="justify-between gap-10">
           <div className="flex flex-1 flex-col overflow-y-auto overflow-x-hidden px-4 md:px-0">
-            <>
-              <div className="flex flex-col items-center gap-2 sm:gap-0 md:flex-row">
-                <Image
-                  src="/img/me.webp"
-                  className="aspect-square h-24 w-24 flex-shrink-0 rounded-xl object-cover md:h-12 md:w-12"
-                  width={64}
-                  height={64}
-                  alt="My photo"
-                  loading="eager"
-                />
-                <div className="ml-4 flex flex-col">
-                  <h2 className="text-center text-lg font-semibold text-neutral-200 sm:text-start">
-                    Daniil Kaminskyi
-                  </h2>
-                  <p className="text-sm text-neutral-400">
-                    deniil019@gmail.com
-                  </p>
-                </div>
+            <div className="flex flex-col items-center gap-2 sm:gap-0 md:flex-row">
+              <Image
+                src="/img/me.webp"
+                className="aspect-square h-24 w-24 flex-shrink-0 rounded-xl object-cover md:h-12 md:w-12"
+                width={64}
+                height={64}
+                alt="My photo"
+                loading="eager"
+                priority
+              />
+              <div className="ml-4 flex flex-col">
+                <h2 className="text-center text-lg font-semibold text-neutral-200 sm:text-start">
+                  Daniil Kaminskyi
+                </h2>
+                <p className="text-sm text-neutral-400">deniil019@gmail.com</p>
               </div>
-            </>
+            </div>
 
             <div className="mt-4 flex h-full flex-col gap-4 rounded-xl border border-[#191919] bg-[#0c0c0c] p-6">
               {links.map((link, idx) => (
