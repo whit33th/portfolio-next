@@ -1,9 +1,9 @@
 "use client";
 import { cn } from "@/lib/utils";
-import Link, { LinkProps } from "next/link";
-import React, { useState, createContext, useContext } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { IconMenu2, IconX } from "@tabler/icons-react";
+import { AnimatePresence, motion } from "framer-motion";
+import Link, { LinkProps } from "next/link";
+import React, { createContext, useContext, useState } from "react";
 
 interface Links {
   label: string;
@@ -128,12 +128,11 @@ export const MobileSidebar = ({
         <AnimatePresence>
           {open && (
             <motion.div
-              initial={{ x: "-100%", opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: "-100%", opacity: 0 }}
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
               transition={{
                 duration: 0.3,
-                ease: "easeInOut",
               }}
               className={cn(
                 "fixed inset-0 z-[100] flex h-full w-full flex-col justify-between bg-neutral-900 p-10",
@@ -173,13 +172,13 @@ export const SidebarLink = ({
     <Link
       href={link.href}
       className={cn(
-        "group/sidebar flex items-center justify-start gap-2 p-2",
+        "group/sidebar flex items-center justify-start gap-4",
         className,
       )}
       onClick={onClick}
       {...props}
     >
-      {link.icon}
+      <div className="">{link.icon}</div>
 
       <motion.span
         animate={{

@@ -10,7 +10,10 @@ const robotoSans = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "dkaminskyi",
+  title: {
+    template: "%s | dkaminskyi",
+    default: "dkaminskyi",
+  },
   description: "Daniil Kaminskyi's portfolio",
   metadataBase: new URL("https://dkaminskyi.xyz"),
   icons: {

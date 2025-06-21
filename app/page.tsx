@@ -7,7 +7,6 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col p-4">
       <div className="mx-auto w-full max-w-7xl">
-        {/* Hero Section */}
         <div className="flex flex-col items-center gap-12 py-12 lg:flex-row lg:items-start">
           <CardContainer className="relative h-48 w-48 overflow-hidden rounded-xl border border-neutral-800 lg:h-[500px] lg:w-[400px]">
             <CardBody>
@@ -45,7 +44,6 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Experience Section */}
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-neutral-200">
                   Experience

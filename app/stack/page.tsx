@@ -1,5 +1,11 @@
 import StackCard from "@/components/containers/stackCard";
 import { stack } from "@/data/stack";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Stack",
+  description: "Technologies, resources and tools I use in my work.",
+};
 
 function page() {
   const allTechnologies = stack.flatMap((c) => c.content);

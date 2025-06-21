@@ -6,9 +6,7 @@ import {
   IconStack2,
   IconUser,
 } from "@tabler/icons-react";
-import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Overlay from "../layouts/overlay";
@@ -75,7 +73,8 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
                 </div>
               </div>
             </>
-            <div className="mt-8 flex flex-col gap-2">
+
+            <div className="mt-4 flex h-full flex-col gap-4 rounded-xl border border-[#191919] bg-[#0c0c0c] p-6">
               {links.map((link, idx) => (
                 <SidebarLink
                   pathname={pathname}
@@ -110,13 +109,14 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
                 </div>
               </div>
 
-              <div className="relative h-[60px] border-t border-[#191919]">
+              <div className="relative h-[60px]">
                 <Dock position="bottom" />
               </div>
             </div>
           </div>
         </SidebarBody>
       </Sidebar>
+
       <main className="relative h-screen w-full overflow-y-auto">
         <Image
           src="/img/bg.png"
@@ -130,30 +130,3 @@ export function SidebarDemo({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
-export const Logo = () => {
-  return (
-    <Link
-      href="#"
-      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal"
-    >
-      <div />
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="whitespace-pre font-medium"
-      >
-        &lt;whit33th/&gt;
-      </motion.span>
-    </Link>
-  );
-};
-export const LogoIcon = () => {
-  return (
-    <Link
-      href="#"
-      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal"
-    >
-      <div className="h-5 w-6 flex-shrink-0 rounded-bl-sm rounded-br-lg rounded-tl-lg rounded-tr-sm bg-black dark:bg-white" />
-    </Link>
-  );
-};

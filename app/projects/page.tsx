@@ -1,5 +1,11 @@
 import { projects } from "@/data/projects";
+import { Metadata } from "next";
 import { ThreeDCard } from "../../components/containers/threedcard";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "Explore my projects showcasing my skills and creativity.",
+};
 
 function page() {
   return (
