@@ -23,6 +23,11 @@ export const stack: IStackCategory[] = [
         description: "React Framework",
       },
       {
+        name: "Convex",
+        icon: "/img/stack/convex.svg",
+        description: "Backend as a Service",
+      },
+      {
         name: "Tailwind CSS",
         icon: "/img/stack/tailwindcss.svg",
         description: "Utility-First CSS Framework",
@@ -91,6 +96,11 @@ export const stack: IStackCategory[] = [
         name: "GitHub",
         icon: "/img/stack/github.svg",
         description: "Code Hosting Platform",
+      },
+      {
+        name: "Cursor",
+        icon: "/img/stack/cursor.svg",
+        description: "AI Integrated IDE",
       },
       {
         name: "Vercel",

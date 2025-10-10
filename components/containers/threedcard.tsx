@@ -1,6 +1,7 @@
 "use client";
 
 import { IProject } from "@/data/projects";
+import { Globe } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { CardBody, CardContainer, CardItem } from "../UI/3d-card";
@@ -9,6 +10,7 @@ import { HoverBorderGradient } from "../UI/hover-border-gradient";
 export function ThreeDCard({
   image,
   git,
+  website,
   stack,
   title,
   description,
@@ -22,24 +24,35 @@ export function ThreeDCard({
           className="flex w-full justify-between text-xl font-bold"
         >
           {title}
-          {git && (
-            <Link target="_blank" href={git}>
-              <HoverBorderGradient
-                as="button"
-                className="rounded-xl bg-black px-1.5 py-1.5 text-xs font-bold dark:bg-white"
-              >
-                {/* <span>GitHub</span> */}
-                <Image
-                  src="/img/stack/github.svg"
-                  alt="GitHub"
-                  width={20}
-                  height={20}
-                  className="h-4 w-4"
-                  loading="lazy"
-                />
-              </HoverBorderGradient>
-            </Link>
-          )}
+          <div className="flex gap-2">
+            {website && (
+              <Link target="_blank" href={website}>
+                <HoverBorderGradient
+                  as="button"
+                  className="rounded-xl bg-black px-1.5 py-1.5 text-xs font-bold dark:bg-white"
+                >
+                  <Globe className="h-4 w-4" />
+                </HoverBorderGradient>
+              </Link>
+            )}
+            {git && (
+              <Link target="_blank" href={git}>
+                <HoverBorderGradient
+                  as="button"
+                  className="rounded-xl bg-black px-1.5 py-1.5 text-xs font-bold dark:bg-white"
+                >
+                  <Image
+                    src="/img/stack/github.svg"
+                    alt="GitHub"
+                    width={20}
+                    height={20}
+                    className="h-4 w-4"
+                    loading="lazy"
+                  />
+                </HoverBorderGradient>
+              </Link>
+            )}
+          </div>
         </CardItem>
         <CardItem
           as="p"

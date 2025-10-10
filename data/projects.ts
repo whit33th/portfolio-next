@@ -3,11 +3,52 @@ export interface IProject {
   description: string;
   image: string;
   git?: string;
+  website?: string;
   stack: string[];
   media?: "video" | "image";
 }
 
 export const projects: IProject[] = [
+  {
+    title: "Night Club",
+    description:
+      "Modern, fully functional nightclub website with events, gallery, news, and an admin panel for easy content management — built with full SEO optimization.",
+    image: "/img/projects/NightClub/1.png",
+    git: "https://github.com/whit33th/night-club",
+    website: "https://2progi.vercel.app/",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Convex",
+      "Tailwind CSS",
+      "SEO (100/100 Lighthouse, 90/100 Analytics)",
+      "ESLint",
+      "Vercel",
+      "SSR",
+      "Framer Motion",
+      "i18n (Multi-language)",
+    ],
+  },
+  {
+    title: "FlowNews",
+    description:
+      "FlowNews is a comprehensive news platform with a sophisticated email communication system.",
+    image: "/img/projects/FlowNews/1.png",
+    git: "https://github.com/whit33th/FlowNews_Resend",
+    website: "https://flow-news-resend.vercel.app/",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Convex",
+      "Resend",
+      "Tailwind CSS",
+      "ESLint",
+      "Framer Motion",
+      "Vercel",
+      "SSR",
+    ],
+  },
+
   {
     title: "Tagly",
     description:
@@ -64,7 +105,7 @@ export const projects: IProject[] = [
     title: "Growee",
     description:
       "Smart & Cute reminder app that helps you water your plants on time. Keep your plants healthy!",
-    image: "/video/Growee.mkv",
+    image: "/img/projects/Growee/1.png",
     stack: [
       "Next.js",
       "TypeScript",
@@ -74,10 +115,12 @@ export const projects: IProject[] = [
       "Next API",
       "Clerk",
       "Pinata",
+      "ImageKit",
+      "Browser Image Compression",
       "Vercel",
       "ESLint",
+      "SSR",
     ],
-    media: "video",
     git: "https://github.com/whit33th/growee",
   },
   {
@@ -96,15 +139,26 @@ export const projects: IProject[] = [
       "Prisma",
       "Vercel",
       "ESLint",
+      "SSR",
     ],
   },
   {
-    title: "Design studio",
+    title: "REMO",
     description:
-      "Website for a design studio with a portfolio and contact form.",
-    image: "/img/projects/WebStudio/st1.png",
-    git: "https://github.com/whit33th/design-studio",
-    stack: ["React", "CSS/SCSS", "Zustand", "ESLint"],
+      "A powerful content management platform with advanced email notification system built for creators who manage content across multiple social media platforms.",
+    image: "/img/projects/REMO/1.png",
+    git: "https://github.com/whit33th/remo",
+    website: "https://remo-nu.vercel.app/",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Convex",
+      "Resend",
+      "Tailwind CSS",
+      "ESLint",
+      "Framer Motion",
+      "Vercel",
+    ],
   },
   {
     title: "PowderPlanet",
@@ -128,6 +182,29 @@ export const projects: IProject[] = [
     image: "/img/projects/Red/1.webp",
     git: "https://github.com/whit33th/Red.com",
     stack: ["PHP", "CSS/SCSS", "API", "Azure"],
+  },
+  {
+    title: "Sphere",
+    description: "Banking platform — landing page concept.",
+    image: "/img/projects/Sphere/1.png",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Convex",
+      "Resend",
+      "Tailwind CSS",
+      "ESLint",
+      "Framer Motion",
+      "Vercel",
+    ],
+  },
+  {
+    title: "Design studio",
+    description:
+      "Website for a design studio with a portfolio and contact form.",
+    image: "/img/projects/WebStudio/st1.png",
+    git: "https://github.com/whit33th/design-studio",
+    stack: ["React", "CSS/SCSS", "Zustand", "ESLint"],
   },
   {
     title: "Netflix",
