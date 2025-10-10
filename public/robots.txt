@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://dkaminskyi.xyz
+
+# Sitemaps
+Sitemap: https://dkaminskyi.xyz/sitemap.xml
