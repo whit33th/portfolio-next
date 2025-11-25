@@ -24,9 +24,28 @@ export const projects: IProject[] = [
       "SEO (100/100 Lighthouse, 90/100 Analytics)",
       "ESLint",
       "Vercel",
-      "SSR",
       "Framer Motion",
       "i18n (Multi-language)",
+    ],
+  },
+  {
+    title: "Ballon Boutique",
+    description:
+      "E-commerce website for a balloon boutique, featuring a product catalog, shopping cart, and secure checkout process.",
+    image: "/img/projects/BallonBoutique/1.png",
+    git: "https://github.com/whit33th/Ballon-Boutique",
+    website: "https://ballon-boutique.vercel.app/",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Convex",
+      "Tailwind CSS",
+      "Stripe (Payments)",
+      "SEO",
+      'Zod',
+      "Vercel",
+      "Framer Motion",
+      "next-intl (Multi-language)",
     ],
   },
   {
@@ -45,7 +64,6 @@ export const projects: IProject[] = [
       "ESLint",
       "Framer Motion",
       "Vercel",
-      "SSR",
     ],
   },
 
@@ -119,7 +137,6 @@ export const projects: IProject[] = [
       "Browser Image Compression",
       "Vercel",
       "ESLint",
-      "SSR",
     ],
     git: "https://github.com/whit33th/growee",
   },
@@ -139,7 +156,6 @@ export const projects: IProject[] = [
       "Prisma",
       "Vercel",
       "ESLint",
-      "SSR",
     ],
   },
   {
