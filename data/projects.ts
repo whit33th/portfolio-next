@@ -91,7 +91,7 @@ export const projects: IProject[] = [
     description:
       "Portal for booking appointments with ready business logic for firm, admin, doctor and patient.",
     image: "/img/projects/mojlekarz/1.webp",
-    git: "https://github.com/whit33th/moj-lekarz-react",
+    git: "https://github.com/whit33th/Moj-Lekarz-MedPortal",
     stack: [
       "React",
       "CSS/SCSS",
