@@ -22,7 +22,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.23",
     "lucide-react": "^0.503.0",
-    "next": "^15.5.4",
+    "next": "15.5.9",
     "next-sitemap": "^4.2.3",
     "nextjs-toploader": "^3.9.17",
     "react": "^19.2.0",
