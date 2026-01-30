@@ -83,7 +83,7 @@ export function ThreeDCard({
             />
           )}
         </CardItem>
-        <div className="mt-4 flex items-start justify-between gap-4">
+        {/* <div className="mt-4 flex items-start justify-between gap-4">
           <CardItem translateZ={20} className="rounded-xl text-xs font-normal">
             <div className="flex flex-wrap gap-1">
               {stack.map((tech, index) => (
@@ -96,7 +96,7 @@ export function ThreeDCard({
               ))}
             </div>
           </CardItem>
-        </div>
+        </div> */}
       </CardBody>
     </CardContainer>
   );
