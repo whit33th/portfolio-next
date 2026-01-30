@@ -16,7 +16,7 @@ function page() {
           image={project.image}
           git={project.git}
           website={project.website}
-          stack={project.stack}
+          // stack={project.stack}
           title={project.title}
           description={project.description}
           media={project.media === "video" ? "video" : "image"}

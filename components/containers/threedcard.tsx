@@ -11,7 +11,7 @@ export function ThreeDCard({
   image,
   git,
   website,
-  stack,
+  // stack,
   title,
   description,
   media = "image",
