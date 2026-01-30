@@ -4,7 +4,7 @@ export interface IProject {
   image: string;
   git?: string;
   website?: string;
-  stack: string[];
+  stack?: string[];
   media?: "video" | "image";
 }
 
